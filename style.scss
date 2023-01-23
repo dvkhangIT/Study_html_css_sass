@@ -1,0 +1,218 @@
+html {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 62.5%;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea,
+button {
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+button {
+  cursor: pointer;
+}
+label,
+input {
+  font-size: 1.6rem;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0;
+}
+$primaryColor: #fc556f;
+$secondaryColor: #fd9c84;
+$blueColor: #42a7fe;
+$greenColor: #00c899;
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+@mixin size($width: width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// Custom checkbox
+.checkbox {
+  &__input {
+    display: none;
+    &:checked + .checkbox__lable::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  margin-top: 2rem;
+  &__lable {
+    padding-left: 5rem;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      @include size(4rem);
+      background-color: $primaryColor;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 1rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      @include size(2rem, 1rem);
+      transform: rotate(-45deg);
+      border-left: 3px solid white;
+      border-bottom: 3px solid white;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s;
+    }
+  }
+}
+// Custom radio
+.radio {
+  margin: 5rem 5px;
+  &__input {
+    display: none;
+    &:checked + .radio__lable::before {
+      background-color: $primaryColor;
+      box-shadow: 0 0 0 4px white, 0 0 0 6px $primaryColor;
+    }
+  }
+  &__lable {
+    padding-left: 5rem;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      @include size(2.5rem);
+      border-radius: 3rem;
+      background-color: #eeee;
+      box-shadow: 0 0 0 4px #eee, 0 0 0 6px #b7c1b7;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.25s ease;
+    }
+  }
+}
+// Custom input file
+.file {
+  @include size(10rem);
+  border-radius: 1rem;
+  border: 1px solid $primaryColor;
+  background-color: rgba($secondaryColor, 0.5);
+  position: relative;
+  &__input {
+    display: none;
+  }
+  &__lable {
+    color: white;
+    position: absolute;
+    @include flexbox(center, center);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+}
+// Custom checkbox toggle
+.checkbox2 {
+  &__input {
+    display: none;
+    &:checked + .checkbox2__lable {
+      background-color: #7f6cfa;
+      .checkbox2__spin {
+        // background-color: $primaryColor;
+        transform: translateX(5rem);
+      }
+    }
+  }
+  margin-top: 5rem;
+  &__lable {
+    @include size(10rem, 5rem);
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s linear;
+  }
+  &__spin {
+    @include size(4rem);
+    background-color: white;
+    border-radius: 4rem;
+    padding: 5px;
+    transition: all 0.2s linear;
+    // transform: translateX(5rem);
+  }
+}
+// Hướng dẫn code hiệu ứng cho input, textarea, button
+.input-style {
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid #9fa6b3;
+  width: 80%;
+  color: #000;
+  font-size: 1.6rem;
+  outline: none;
+  transition: all 0.2s linear;
+  &::-webkit-input-placeholder {
+    color: #9fa6b3;
+  }
+  &:focus {
+    border-color: #e55448;
+    box-shadow: 0 0 0 4px #e4c6c5;
+  }
+}
+.button-style {
+  display: block;
+  margin-top: 2rem;
+  border: 0;
+  outline: none;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 85%;
+  color: white;
+  background-color: #e44c69;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  box-shadow: 0 5px 0 0 #c71939;
+  &:hover {
+    background-color: #fccbbf;
+    color: #e44c69;
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 0 0 0 #c71939;
+  }
+}
