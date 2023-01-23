@@ -73,7 +73,7 @@ $greenColor: #00c899;
     &::before {
       content: "";
       @include size(4rem);
-      background-color: $primaryColor;
+      background-color: blue;
       position: absolute;
       left: 0;
       top: 50%;
