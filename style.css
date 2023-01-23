@@ -62,7 +62,7 @@ input[type=number]::-webkit-outer-spin-button {
   content: "";
   width: 4rem;
   height: 4rem;
-  background-color: blue;
+  background-color: #fc556f;
   position: absolute;
   left: 0;
   top: 50%;
