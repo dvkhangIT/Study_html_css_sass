@@ -63,7 +63,7 @@ input[type=number]::-webkit-outer-spin-button {
   content: "";
   width: 4rem;
   height: 4rem;
-  background-color: red;
+  background-color: #fc556f;
   position: absolute;
   left: 0;
   top: 50%;
@@ -211,6 +211,11 @@ input[type=number]::-webkit-outer-spin-button {
 .button-style:active {
   transform: translateY(3px);
   box-shadow: 0 0 0 0 #c71939;
+}
+
+form input {
+  background-color: #fc556f;
+  box-shadow: inset 0 0 0 5rem #fc556f;
 }
 
 /*# sourceMappingURL=style.css.map */
