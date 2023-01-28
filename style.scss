@@ -59,6 +59,7 @@ $greenColor: #00c899;
 // Custom checkbox
 .checkbox {
   &__input {
+    transition: all 0.7s linear;
     display: none;
     &:checked + .checkbox__lable::after {
       opacity: 1;
@@ -73,7 +74,8 @@ $greenColor: #00c899;
     &::before {
       content: "";
       @include size(4rem);
-      background-color: $primaryColor;
+      // background-color: $primaryColor;
+      background-color: red;
       position: absolute;
       left: 0;
       top: 50%;
@@ -205,7 +207,7 @@ $greenColor: #00c899;
   color: white;
   background-color: #e44c69;
   cursor: pointer;
-  transition: all 0.2s linear;
+  transition: all 0.05s linear;
   box-shadow: 0 5px 0 0 #c71939;
   &:hover {
     background-color: #fccbbf;

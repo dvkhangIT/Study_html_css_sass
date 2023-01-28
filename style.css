@@ -47,6 +47,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 2rem;
 }
 .checkbox__input {
+  transition: all 0.7s linear;
   display: none;
 }
 .checkbox__input:checked + .checkbox__lable::after {
@@ -62,7 +63,7 @@ input[type=number]::-webkit-outer-spin-button {
   content: "";
   width: 4rem;
   height: 4rem;
-  background-color: #fc556f;
+  background-color: red;
   position: absolute;
   left: 0;
   top: 50%;
@@ -200,7 +201,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
   background-color: #e44c69;
   cursor: pointer;
-  transition: all 0.2s linear;
+  transition: all 0.05s linear;
   box-shadow: 0 5px 0 0 #c71939;
 }
 .button-style:hover {
